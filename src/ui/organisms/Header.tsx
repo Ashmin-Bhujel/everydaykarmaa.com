@@ -23,11 +23,6 @@ export default function Header() {
       title: "Sessions",
       current,
     },
-    {
-      to: "/links",
-      title: "Links",
-      current,
-    },
   ];
 
   navLinks.forEach((navLinks) => {

@@ -1,6 +1,7 @@
 import sessionsData from "@/constants/data/sessions.data";
 import SessionCard, { SessionType } from "../organisms/SessionCard";
 import { Helmet } from "react-helmet-async";
+import Layout from "./Layout";
 
 export interface EventsListingPropsType {
   title: string;
@@ -23,7 +24,7 @@ export function EventsListing({
           (session) =>
             session.isUpcoming === showUpcoming && (
               <SessionCard key={session.title} session={session} />
-            )
+            ),
         )}
       </div>
     </div>
@@ -32,7 +33,7 @@ export function EventsListing({
 
 export default function Events() {
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>EverydayKarma - Sessions</title>
         <meta
@@ -58,6 +59,6 @@ export default function Events() {
           showUpcoming={false}
         />
       </div>
-    </>
+    </Layout>
   );
 }
